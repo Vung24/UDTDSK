@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".main.activity.HealthStatisticActivity">
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@drawable/primary_color_background">
+
+        <include
+            layout="@layout/cm_button_back"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Thống kê sức khỏe"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="@dimen/title_large"
+            android:textColor="@color/white"/>
+    </TableRow>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:stretchColumns="*">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="20dp"
+                android:background="@drawable/shape_around"
+                >
+
+                <ImageButton
+                    android:id="@+id/imgBtnHeartHealth"
+                    android:layout_width="@dimen/width_khung"
+                    android:layout_height="@dimen/height_khung"
+                    android:background="@android:color/transparent"
+                    android:backgroundTint="@color/maunen"
+                    android:src="@drawable/heart_health" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Sức khỏe tim mạch"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/content_medium" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="20dp"
+                android:background="@drawable/shape_around">
+
+                <ImageButton
+                    android:id="@+id/imgBtnQualitySleep"
+                    android:layout_width="@dimen/width_khung"
+                    android:layout_height="@dimen/height_khung"
+                    android:background="@android:color/transparent"
+                    android:backgroundTint="@color/maunen"
+                    android:elevation="20dp"
+                    android:src="@drawable/quality_sleep" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Chất lượng giấc ngủ"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/content_medium" />
+
+            </LinearLayout>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:stretchColumns="*">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="20dp"
+                android:background="@drawable/shape_around">
+
+                <ImageButton
+                    android:id="@+id/imgBtnCalories"
+                    android:layout_width="@dimen/width_khung"
+                    android:layout_height="@dimen/height_khung"
+                    android:src="@drawable/calories"
+                    android:backgroundTint="@color/maunen"
+                    android:background="@android:color/transparent"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:backgroundTint="@color/maunen"
+                    android:elevation="20dp"
+                    android:gravity="center"
+                    android:text="Lượng Kcal"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/content_medium" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="20dp"
+                android:background="@drawable/shape_around">
+
+                <ImageButton
+                    android:id="@+id/imgBtnBMI"
+                    android:layout_width="@dimen/width_khung"
+                    android:layout_height="@dimen/height_khung"
+                    android:src="@drawable/bmi"
+                    android:background="@android:color/transparent"
+                    android:backgroundTint="@color/maunen"
+                    android:elevation="20dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="Chỉ số BMI"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/content_medium" />
+
+            </LinearLayout>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:stretchColumns="*">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="20dp"
+                android:background="@drawable/shape_around">
+                <ImageButton
+                    android:id="@+id/imgBtnExercisePlan"
+                    android:layout_width="@dimen/width_khung"
+                    android:layout_height="@dimen/height_khung"
+                    android:src="@drawable/excercise_plan"
+                    android:background="@android:color/transparent"
+                    android:backgroundTint="@color/maunen"
+
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:text="Kế hoạch tập luyện"
+                    android:textSize="@dimen/content_medium" />
+
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

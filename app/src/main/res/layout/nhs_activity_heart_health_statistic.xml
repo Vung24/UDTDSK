@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".main.statistic.HeartHealthStatisticActivity">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+            android:background="@drawable/primary_color_background">
+            <include
+                layout="@layout/cm_button_back"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="@dimen/title_large"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="Sức khỏe tim mạch" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/label_large"
+                android:text="Từ: " />
+
+            <TextView
+                android:id="@+id/txtStart"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/content_large"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/label_large"
+                android:text="Đến:" />
+
+            <TextView
+                android:id="@+id/txtFinish"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/content_large"
+                android:text="" />
+
+            <ImageButton
+                android:id="@+id/showDatePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/date"
+                android:background="#C8E9C3"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:gravity="center"
+            >
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                tools:ignore="MissingConstraints" />
+
+        </TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/label_medium"
+            android:text="Thống kê:"
+            android:layout_marginLeft="10dp"/>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:gravity="center"
+            >
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieChart"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                tools:ignore="MissingConstraints" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            >
+            <TextView
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/blue_dot"
+                android:drawablePadding="8dp"
+                android:textSize="@dimen/content_medium"
+                android:text="Chậm" />
+            <TextView
+                android:drawableStart="@drawable/green_dot"
+                android:drawablePadding="8dp"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/content_medium"
+                android:text="Bình thường" />
+            <TextView
+                android:drawableStart="@drawable/yellow_dot"
+                android:drawablePadding="8dp"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/content_medium"
+                android:text="Cao" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            >
+            <TextView
+                android:drawableStart="@drawable/red_dot"
+                android:drawablePadding="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/content_medium"
+                android:text= "Huyết áp tăng"/>
+        </TableRow>
+
+    </LinearLayout>
+
+</ScrollView>
+

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/background_list_color"
+    >
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp">
+
+        <TextView
+            android:id="@+id/txt1"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:text="Chiều cao:"
+            android:textSize="@dimen/content_large" />
+        <TextView
+            android:id="@+id/txtHeight"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="chiều cao"
+            android:textSize="@dimen/content_large" />
+
+        <TextView
+            android:id="@+id/txt2"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:text="Trạng thái:"
+            android:textSize="@dimen/content_large" />
+
+        <TextView
+            android:id="@+id/txtStatus"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:hint="trạng thái"
+            android:textSize="@dimen/content_large" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:text="Cân nặng:"
+            android:textSize="@dimen/content_large" />
+
+        <TextView
+            android:id="@+id/txtWeight"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="cân nặng"
+
+            android:textSize="@dimen/content_large" />
+
+        <TextView
+            android:id="@+id/txt3"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="Ngày:"
+            android:textSize="@dimen/content_large"
+            android:layout_marginLeft="2dp"/>
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:hint="Ngày"
+            android:textSize="@dimen/content_large"/>
+    </TableRow>
+
+
+</LinearLayout>

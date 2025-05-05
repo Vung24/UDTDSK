@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="40px"
+        >
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hướng dẫn sử dụng: "
+            android:textStyle="bold"
+            android:textSize="@dimen/label_large"
+            />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20px"
+            android:textSize="@dimen/content_large"
+            android:text="1. Nhấn vào nút cộng ở góc dưới bên phải màn hình. Sau đó, biểu mẫu sẽ xuất hiện và yêu cầu nhập thông tin liên quan đến kế hoạch tập luyện." />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20px"
+            android:textSize="@dimen/content_large"
+            android:text="2. Để chỉnh sửa kế hoạch tập luyện, vui lòng nhấn vào kế hoạch tập luyện đó trên màn hình, sau đó biểu mẫu sẽ xuất hiện với thông tin về kế hoạch hiện tại, chỉnh sửa biểu mẫu, nhấn nút 'Đồng ý' để lưu, nhấn nút 'Hủy' để hủy." />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20px"
+            android:textSize="@dimen/content_large"
+            android:text="3. Để xóa kế hoạch tập luyện, nhấn và giữ kế hoạch tập luyện đó trên màn hình, hệ thống sẽ hiển thị yêu cầu xác nhận xóa. Nhấn 'Đồng ý' để xóa, nhấn 'Hủy' để thoát." />
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chú ý: "
+            android:textStyle="bold"
+            android:textSize="@dimen/label_large"
+            />
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20px"
+            android:textSize="@dimen/content_large"
+            android:textColor="@color/red"
+            android:text="1. Khi tạo hoặc chỉnh sửa kế hoạch tập luyện, tất cả thông tin trên biểu mẫu phải được nhập đầy đủ và không được để trống." />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20px"
+            android:textSize="@dimen/content_large"
+            android:textColor="@color/red"
+            android:text="2. Thông tin nhập vào biểu mẫu phải đúng định dạng. Nếu bạn không nhập đúng định dạng, khi nhấn 'Đồng ý', biểu mẫu sẽ biến mất và kế hoạch tập luyện sẽ không được tạo hoặc chỉnh sửa." />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
