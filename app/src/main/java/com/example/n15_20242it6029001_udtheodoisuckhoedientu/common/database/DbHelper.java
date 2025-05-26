@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DbHelper extends SQLiteOpenHelper {
-    private static final String DB_NAME = "nhom12.db";
+    private static final String DB_NAME = "nhom15.db";
     private static final int DB_VERSION = 2;
 
     static final String CREATE_TABLE_USER =

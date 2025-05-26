@@ -140,12 +140,10 @@ public class RemindWaterActivity extends AppCompatActivity {
         int remain = (int) (target - totalConsumed);
 
         // Tạo Intent để gửi broadcast khi nhắc nhở được kích hoạt
-        Intent intent = new Intent(RemindWaterActivity.this, ReminderReceiver.class);
+        Intent intent = new Intent(this, ReminderReceiver.class);
         intent.setAction("MyAction");
         intent.putExtra("remain", remain);
-          PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-         pendingIntent = PendingIntent.getBroadcast(
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(
                 this,
                 0,
                 intent,

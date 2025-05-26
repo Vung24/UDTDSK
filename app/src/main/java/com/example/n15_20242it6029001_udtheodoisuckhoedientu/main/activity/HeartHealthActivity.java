@@ -98,7 +98,7 @@ public class HeartHealthActivity extends AppCompatActivity {
                 Toast.makeText(this, "Nhịp tim không được để trống!", Toast.LENGTH_SHORT).show();
                 editHeartBeat.requestFocus();
             } else if (editHeartPressure.getText().toString().isEmpty()) {
-                Toast.makeText(this, "Nhịp tim không được để trống!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Huyết áp không được để trống!", Toast.LENGTH_SHORT).show();
                 editHeartPressure.requestFocus();
             } else {
                 float heartBeat = Float.parseFloat(editHeartBeat.getText().toString());
