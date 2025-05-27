@@ -40,7 +40,6 @@ public class ExercisePlanActivity extends AppCompatActivity implements RecyclerD
     ExercisePlanDAO exercisePlanDao;
     List<ExercisePlan> exercisePlans;
     RecyclerDataAdapter recyclerDataAdapter;
-    Toolbar toolbar;
     Calendar cal ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
