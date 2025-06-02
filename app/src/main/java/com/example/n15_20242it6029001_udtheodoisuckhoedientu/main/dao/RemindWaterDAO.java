@@ -13,8 +13,6 @@ import java.util.List;
 import com.example.n15_20242it6029001_udtheodoisuckhoedientu.common.database.DbHelper;
 import com.example.n15_20242it6029001_udtheodoisuckhoedientu.common.objects.UserSession;
 import com.example.n15_20242it6029001_udtheodoisuckhoedientu.main.model.RemindWater;
-
-
 public class RemindWaterDAO {
     private SQLiteDatabase db;
     private int user_id;
@@ -59,13 +57,11 @@ public class RemindWaterDAO {
     }
     public int getTotalConsumed() {
         int totalConsumed = 0;
-
         Cursor cursor = db.rawQuery("SELECT SUM(amount) FROM remind_water WHERE user_id = ?", new String[]{String.valueOf(this.user_id)});
         if (cursor.moveToFirst()) {
             totalConsumed = cursor.getInt(0);
         }
         cursor.close();
-
         return totalConsumed;
     }
     public void deleteAll() {
@@ -103,6 +99,7 @@ public class RemindWaterDAO {
         }
         return frequency;
     }
+    // lay can nang tu db
     @SuppressLint("Range")
     public float getWeightFromDatabase(int userId) {
         float weight = 0.0f;
@@ -121,6 +118,7 @@ public class RemindWaterDAO {
         }
         return weight;
     }
+    // xoa nhac nho uong nuoc
     public long delete(String id) {
         Log.d("RemindWaterDAO", "Deleting remind_water_id: " + id);
         long result = db.delete("remind_water", "remind_water_id=?", new String[]{id});

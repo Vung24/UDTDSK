@@ -132,12 +132,9 @@ public class RemindWaterActivity extends AppCompatActivity {
     private void DatLichReminder(long interval) {
         // Sử dụng AlarmManager để đặt lịch nhắc nhở
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-
         int totalConsumed = TinhTongNuoc();
         float target = calculateTarget();
-
-        int remain = (int) (target - totalConsumed);
-
+        int remain = Math.round(target - totalConsumed); // Làm tròn đến số nguyên gần nhất
         // Tạo Intent để gửi broadcast khi nhắc nhở được kích hoạt
         Intent intent = new Intent(this, ReminderReceiver.class);
         intent.setAction("MyAction");
@@ -154,18 +151,16 @@ public class RemindWaterActivity extends AppCompatActivity {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
         Log.d("Nhắc nhở chuông", "Thiết lập lại chuông");
-
         alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis() + interval, interval, pendingIntent);
     }
     // ham huy nhac nho uong nuoc
     private void HuyReminder() {
         Intent intent = new Intent(RemindWaterActivity.this, ReminderReceiver.class);
         intent.setAction("MyAction");
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         // Hủy bỏ lịch nhắc nhở
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         alarmManager.cancel(pendingIntent);
-
         // Hủy bỏ cả PendingIntent
         pendingIntent.cancel();
     }
@@ -178,7 +173,6 @@ public class RemindWaterActivity extends AppCompatActivity {
         final EditText edtFrequency = view.findViewById(R.id.edtFrequency);
 
         builder.setView(view);
-
         builder.setPositiveButton("Cập nhật", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

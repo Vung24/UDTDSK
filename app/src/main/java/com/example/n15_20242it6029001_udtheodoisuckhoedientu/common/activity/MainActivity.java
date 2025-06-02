@@ -27,8 +27,6 @@ import com.example.n15_20242it6029001_udtheodoisuckhoedientu.main.activity.BMIIn
 import com.example.n15_20242it6029001_udtheodoisuckhoedientu.main.activity.ShowProfileActivity;
 import com.example.n15_20242it6029001_udtheodoisuckhoedientu.main.activity.HealthStatisticActivity;
 
-
-
 public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     DrawerLayout drawerLayout;
@@ -58,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if(id == R.id.menuItemLogout){
                     logOut();
-
                 }
                 else{
 
@@ -81,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
                 this, drawerLayout, toolbar,R.string.app_name,R.string.app_name);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-
     }
     // ánh xạ
     public void getWidget(){
@@ -132,13 +128,11 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
     public void logOut(){
         UserSession userSession = UserSession.getInstance();
         userSession.clearSession();
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(intent);
         finish();
-
     }
 }

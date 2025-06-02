@@ -31,7 +31,6 @@ public class ReminderReceiver extends BroadcastReceiver {
         PendingIntent pendingIntent = PendingIntent.getActivity(
                 context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
         );
-
         // Tạo NotificationBuilder
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "reminder_channel_id")
                 .setContentTitle("Nhắc nhở uống nước")
