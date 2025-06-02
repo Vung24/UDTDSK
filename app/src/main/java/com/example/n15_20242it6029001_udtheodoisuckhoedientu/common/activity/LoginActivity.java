@@ -17,7 +17,6 @@ import com.example.n15_20242it6029001_udtheodoisuckhoedientu.common.objects.User
 import com.example.n15_20242it6029001_udtheodoisuckhoedientu.main.activity.CreateProfileActivity;
 import com.example.n15_20242it6029001_udtheodoisuckhoedientu.main.dao.ProfileDAO;
 
-
 public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     EditText edtUserName, edtPassword;

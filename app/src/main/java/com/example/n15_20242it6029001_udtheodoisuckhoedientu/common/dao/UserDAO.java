@@ -52,17 +52,18 @@ public class UserDAO {
         } else {
             return false;
         }
+//        cursor.close();
     }
-    public boolean checkExistEmail(String email){
-        String sqlQuery = "SELECT * FROM user WHERE email = ?";
-        String[] selectionArgs = {email};
-        Cursor cursor = db.rawQuery(sqlQuery,selectionArgs );
-        if (cursor.getCount() != 0){
-            return true;
-        } else {
-            return false;
+        public boolean checkExistEmail(String email){
+            String sqlQuery = "SELECT * FROM user WHERE email = ?";
+            String[] selectionArgs = {email};
+            Cursor cursor = db.rawQuery(sqlQuery,selectionArgs );
+            if (cursor.getCount() != 0){
+                return true;
+            } else {
+                return false;
+            }
         }
-    }
     // thay doi mat khau
     @SuppressLint("Range")
     public String changePassword(String email, String oldPassword, String newPassword){
@@ -94,12 +95,10 @@ public class UserDAO {
                 db.update(tableName, values, whereClause, whereArgs);
                 return "Thành công";
             }
-
         }
         catch (Exception e){
             e.printStackTrace();
             return "Lỗi";
-
         }
     }
 }

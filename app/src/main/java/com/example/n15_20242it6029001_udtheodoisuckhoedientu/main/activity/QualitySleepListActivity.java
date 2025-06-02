@@ -24,11 +24,9 @@ import com.example.n15_20242it6029001_udtheodoisuckhoedientu.common.activity.Mai
 public class QualitySleepListActivity extends AppCompatActivity {
     ListView lvQuality;
     Button btnHome,btnRemove;
-
     QualitySleepDAO qualitySleepDAO;
     QualitySleepAdapter arrayAdapter;
     List<QualitySleep> list = new ArrayList<>();
-
     Context context;
 
     @Override
@@ -37,22 +35,19 @@ public class QualitySleepListActivity extends AppCompatActivity {
         setContentView(R.layout.ntv_activity_quality_sleep_list);
         getWidget();
         qualitySleepDAO = new QualitySleepDAO(this);
-        getSelectLV(); // chon dong dl - xoa
+        getSelectLV(); // chon dong dl
         backHome();
     }
     public void getWidget(){
         lvQuality = findViewById(R.id.lvQuality);
         btnHome = findViewById(R.id.btnHome);
         btnRemove = findViewById(R.id.btnRemove);
-
         //khởi tạo các biến
         context = this;
         //hien thi du lieu khi chay chuong trinh
         list.clear();
         qualitySleepDAO = new QualitySleepDAO(context);
-
         list = qualitySleepDAO.getAll();
-
         arrayAdapter = new QualitySleepAdapter(context,list);
         lvQuality.setAdapter(arrayAdapter);
     }
@@ -79,7 +74,6 @@ public class QualitySleepListActivity extends AppCompatActivity {
                                 public void onClick(DialogInterface dialog, int which) {
                                     // Gọi phương thức xóa từ QualitySleepDAO để xóa dữ liệu từ cơ sở dữ liệu
                                     int result = (int) qualitySleepDAO.delete(String.valueOf(selectedQualitySleep.getSleep_id()));
-
                                     if (result > 0) {
                                         // Nếu xóa thành công, cập nhật danh sách và cập nhật ListView
                                         list.remove(selectedPosition);
@@ -103,7 +97,7 @@ public class QualitySleepListActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(QualitySleepListActivity.this, MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // dua lai activity main da co san len lai dau
                 startActivity(intent);
                 finish();
             }

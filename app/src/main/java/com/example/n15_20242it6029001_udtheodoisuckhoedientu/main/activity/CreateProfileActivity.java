@@ -69,6 +69,7 @@ public class CreateProfileActivity extends AppCompatActivity {
 
         }
     }
+    // anh xa
     public void getWidget(){
         editName = findViewById(R.id.editName);
         radGender = findViewById(R.id.radGender);

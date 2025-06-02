@@ -58,8 +58,6 @@ public class RemindWaterActivity extends AppCompatActivity {
         getWidget();
         startNewDay(); // dat thoi diem bat dau la thoi diem hien tai
         updateTvTarget();
-
-        // Tự động đặt lịch nhắc nhở khi Activity được tạo
         ktraLuongNuoc();
 
         imgCreate.setOnClickListener(new View.OnClickListener() {
@@ -95,8 +93,6 @@ public class RemindWaterActivity extends AppCompatActivity {
         context = this;
         //hien thi du lieu khi chay chuong trinh
         list.clear();
-
-
         list = remindWaterDAO.getAllInDay(getCurrentDate());
         arrayAdapter = new RemindWaterAdapter(context, list);
         dsNuoc.setAdapter(arrayAdapter);
@@ -258,7 +254,7 @@ public class RemindWaterActivity extends AppCompatActivity {
 
         builder.show();
     }
-
+    // add luong nuoc vao csdl
     private void insertWater(float amount) {
         String time = new SimpleDateFormat("HH:mm a", Locale.getDefault()).format(new Date());
         String date = getCurrentDate();

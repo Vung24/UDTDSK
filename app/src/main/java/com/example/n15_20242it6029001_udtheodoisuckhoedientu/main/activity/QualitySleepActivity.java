@@ -33,7 +33,6 @@ public class QualitySleepActivity extends AppCompatActivity {
     ImageButton  imgStart, imgFinish, imgDate;
     EditText edtStart, edtFinish;
     TextView tvDate;
-
     Button btnAdd,btnList;
     Calendar dateCal;
     Calendar timeCal;
@@ -43,9 +42,7 @@ public class QualitySleepActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ntv_activity_quality_sleep);
-
-        getWidget(); // ánh xạ
-
+        getWidget();
         HienThiThoiGianBatDau();
         HienThiThoiGianEnd();
         HienThiNgay();
@@ -95,7 +92,6 @@ public class QualitySleepActivity extends AppCompatActivity {
         });
     }
 
-
     private String LayNgayHienTai() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
         Date currentDate = new Date(System.currentTimeMillis());
@@ -110,7 +106,7 @@ public class QualitySleepActivity extends AppCompatActivity {
                 int hour = calendar.get(Calendar.HOUR_OF_DAY);
                 int minute = calendar.get(Calendar.MINUTE);
 
-                // Tạo TimePickerDialog
+                // Tạo TimePickerDialog giúp người dùng chọn giờ
                 TimePickerDialog timePickerDialog = new TimePickerDialog(QualitySleepActivity.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
@@ -361,8 +357,6 @@ public class QualitySleepActivity extends AppCompatActivity {
     public void back(View v){
         finish();
     }
-
-
 
     private String calHours(float time){
         int hour = (int) time;
