@@ -142,7 +142,7 @@ public class RemindWaterActivity extends AppCompatActivity {
         // Tạo Intent để gửi broadcast khi nhắc nhở được kích hoạt
         Intent intent = new Intent(this, ReminderReceiver.class);
         intent.setAction("MyAction");
-        intent.putExtra("remain", remain);
+        intent.putExtra("remain", String.valueOf(remain));
         PendingIntent pendingIntent = PendingIntent.getBroadcast(
                 this,
                 0,
@@ -209,13 +209,12 @@ public class RemindWaterActivity extends AppCompatActivity {
 
         builder.show();
     }
+    // Xoa du lieu khi qua ngay moi
     private void startNewDay() {
         // Lấy ngày hiện tại
         String currentDate = getCurrentDate();
-
         // Lấy ngày lưu trữ trong CSDL (nếu có)
         String createdDate = remindWaterDAO.getCreatedDate(); // Triển khai hàm này trong RemindWaterDAO
-
         // So sánh ngày hiện tại với ngày lưu trữ
         if (!currentDate.equals(createdDate)) {
             // Nếu là ngày mới, thực hiện reset CSDL và đặt lịch nhắc nhở

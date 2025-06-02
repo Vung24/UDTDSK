@@ -22,6 +22,9 @@ public class ReminderReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         String remain = intent.getStringExtra("remain"); // nhận dữ liệu lượng nước còn thiếu (nếu có)
+        if (remain == null) {
+            remain = "0"; // Giá trị mặc định nếu remain là null
+        }
 
         // Tạo intent khi bấm vào notification
         Intent notificationIntent = new Intent(context, RemindWaterActivity.class);
@@ -32,14 +35,14 @@ public class ReminderReceiver extends BroadcastReceiver {
         // Tạo NotificationBuilder
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "reminder_channel_id")
                 .setContentTitle("Nhắc nhở uống nước")
-                .setContentText("Đến giờ bạn uống nước rồi.\nHôm nay bạn thiếu " + remain + " mL để đủ lượng nước.")
+                .setContentText("Đến giờ bạn uống nước rồi.\nHôm nay bạn cần uống thêm " + remain + " ml để đủ lượng nước.")
                 .setSmallIcon(R.drawable.ic_notifications)
                 .setContentIntent(pendingIntent)
                 .setAutoCancel(true)
                 .setColor(Color.BLUE)
                 .setCategory(NotificationCompat.CATEGORY_ALARM)
                 .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText("Đến giờ bạn uống nước rồi.\nHôm nay bạn thiếu " + remain + " mL để đủ lượng nước."));
+                        .bigText("Đến giờ bạn uống nước rồi.\nHôm nay bạn cần uống thêm " + remain + " ml để đủ lượng nước."));
 
         // Tạo notification channel (Android 8+ yêu cầu)
         NotificationManager notificationManager =

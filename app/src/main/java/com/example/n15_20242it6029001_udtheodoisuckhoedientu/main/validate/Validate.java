@@ -25,7 +25,7 @@ public class Validate {
         }
         return true;
     }
-
+    // ktra khong duoc chua cac ki tu dac biet
     public static boolean containsSpecialCharacters(String str) {
         String specialCharacters = "~`!@#$%^&*()-_=+\\|[{]};:'\",<.>/?";
 

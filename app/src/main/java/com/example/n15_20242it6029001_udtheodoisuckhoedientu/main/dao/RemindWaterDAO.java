@@ -120,7 +120,10 @@ public class RemindWaterDAO {
 
         return weight;
     }
-    public long delete(String id){
-        return db.delete("remind_water", "remind_water_id=?", new String[]{id});
+    public long delete(String id) {
+        Log.d("RemindWaterDAO", "Deleting remind_water_id: " + id);
+        long result = db.delete("remind_water", "remind_water_id=?", new String[]{id});
+        Log.d("RemindWaterDAO", "Delete result: " + result);
+        return result;
     }
 }
