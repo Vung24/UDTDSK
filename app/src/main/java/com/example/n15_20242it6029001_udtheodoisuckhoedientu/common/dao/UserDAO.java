@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import com.example.n15_20242it6029001_udtheodoisuckhoedientu.common.database.DbHelper;
 import com.example.n15_20242it6029001_udtheodoisuckhoedientu.common.objects.User;
 import com.example.n15_20242it6029001_udtheodoisuckhoedientu.common.objects.UserSession;
-
+//Data access object
 public class UserDAO {
     private SQLiteDatabase db;
     public UserDAO(Context context){

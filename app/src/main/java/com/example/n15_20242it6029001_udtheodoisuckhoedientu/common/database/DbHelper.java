@@ -84,8 +84,6 @@ public class DbHelper extends SQLiteOpenHelper {
             "   user_id INTEGER REFERENCES user(user_id)" +
             ");";
 
-
-
     public DbHelper(@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
@@ -114,7 +112,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         String dropTableUser = "drop table if exists user";
         db.execSQL(dropTableUser);
-        String dropTableProfile = "drop table if exists proflie";
+        String dropTableProfile = "drop table if exists profile";
         db.execSQL(dropTableProfile);
         String dropTableHeartHealth = "drop table if exists hearth_health";
         db.execSQL(dropTableHeartHealth);
@@ -126,10 +124,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL(dropTableExercisePlan);
         String dropTableRemindWater = "drop table if exists remind_water";
         db.execSQL(dropTableRemindWater);
-
         onCreate(db);
     }
-
-
 }
 

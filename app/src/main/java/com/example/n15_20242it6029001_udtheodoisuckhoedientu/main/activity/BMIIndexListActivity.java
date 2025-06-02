@@ -48,7 +48,7 @@ public class BMIIndexListActivity extends AppCompatActivity {
         btnRemove = findViewById(R.id.btnRemove);
         btnHome.setOnClickListener(new doSomeTHing());
         btnRemove.setOnClickListener(new doSomeTHing());
-        adapterBmiIndex = new BMIIndexAdapter(this,R.layout.ntv_custom_view_bmiindex,arrayList);
+        adapterBmiIndex = new BMIIndexAdapter(this,R.layout.ntv_custom_view_bmiindex,arrayList); //gan arraylist vao constructer
         lvBI.setAdapter(adapterBmiIndex);
     }
     protected class doSomeTHing implements View.OnClickListener{
@@ -72,7 +72,7 @@ public class BMIIndexListActivity extends AppCompatActivity {
         arrayList.clear();
         bmiIndexDAO = new BMIIndexDAO(this);
         arrayList.addAll(bmiIndexDAO.getAll());
-        adapterBmiIndex.notifyDataSetChanged();
+        adapterBmiIndex.notifyDataSetChanged(); // cap nhat listview
     }
 
     private void showDeleteConfirm(String id, int position) {
