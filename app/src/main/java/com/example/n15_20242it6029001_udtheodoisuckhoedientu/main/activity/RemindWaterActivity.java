@@ -106,8 +106,7 @@ public class RemindWaterActivity extends AppCompatActivity {
         ctrUongNuoc.setMax((int) target);
         ctrUongNuoc.setProgress(totalConsumed);
     }
-
-    
+    // kiem tra luong nuoc uong trong ngay
     private void ktraLuongNuoc() {
         // Lấy dữ liệu từ cơ sở dữ liệu
         float frequency = remindWaterDAO.getFrequencyFromDatabase();
@@ -129,7 +128,7 @@ public class RemindWaterActivity extends AppCompatActivity {
             }
         }
     }
-
+    // dat lich nhac nho uong nuoc
     private void DatLichReminder(long interval) {
         // Sử dụng AlarmManager để đặt lịch nhắc nhở
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
@@ -158,7 +157,7 @@ public class RemindWaterActivity extends AppCompatActivity {
 
         alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis() + interval, interval, pendingIntent);
     }
-
+    // ham huy nhac nho uong nuoc
     private void HuyReminder() {
         Intent intent = new Intent(RemindWaterActivity.this, ReminderReceiver.class);
         intent.setAction("MyAction");
@@ -267,7 +266,6 @@ public class RemindWaterActivity extends AppCompatActivity {
     }
 
     private void insertWater(float amount) {
-
         String time = new SimpleDateFormat("HH:mm a", Locale.getDefault()).format(new Date());
         String date = getCurrentDate();
         RemindWater remindWater = new RemindWater(amount,2,time,date,user_id);
@@ -322,10 +320,8 @@ public class RemindWaterActivity extends AppCompatActivity {
     private void updateTvTarget() {
         int totalConsumed = TinhTongNuoc();
         float target = calculateTarget();
-
         // Tính toán giá trị cần hiển thị trong edtTarget
         float remainingTarget = target - totalConsumed;
-
         // Hiển thị giá trị trong edtTarget
         tvTarget.setText(String.format("%d/%.0f ml", totalConsumed, target));
     }
@@ -346,7 +342,6 @@ public class RemindWaterActivity extends AppCompatActivity {
     public void remove(int position){
         if (position != ListView.INVALID_POSITION) {
             RemindWater selectedRemindWater = list.get(position);
-
             new AlertDialog.Builder(context)
                     .setTitle("Xác nhận xóa")
                     .setMessage("Bạn có chắc muốn xóa mục này?")

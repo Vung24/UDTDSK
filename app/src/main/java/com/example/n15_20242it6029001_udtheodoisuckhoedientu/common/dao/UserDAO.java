@@ -63,7 +63,7 @@ public class UserDAO {
             return false;
         }
     }
-
+    // thay doi mat khau
     @SuppressLint("Range")
     public String changePassword(String email, String oldPassword, String newPassword){
         UserSession userSession = UserSession.getInstance();

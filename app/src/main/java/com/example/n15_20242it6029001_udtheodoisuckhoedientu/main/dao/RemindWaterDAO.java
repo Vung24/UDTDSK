@@ -39,7 +39,7 @@ public class RemindWaterDAO {
     @SuppressLint("Range")
     public List<RemindWater> getData(String sql, String...selectionArgs){
         List<RemindWater> list = new ArrayList();
-        Cursor cursor = db.rawQuery(sql, selectionArgs);
+        Cursor cursor = db.rawQuery(sql, selectionArgs); // dung con tro chi toi sql
         while (cursor.moveToNext()){
             RemindWater obj = new RemindWater();
             obj.setRemind_water_id(Integer.parseInt(cursor.getString(cursor.getColumnIndex("remind_water_id"))));
@@ -75,18 +75,20 @@ public class RemindWaterDAO {
     public String getCreatedDate() {
         String createdDate = "";
         Cursor cursor = db.rawQuery("SELECT created_date FROM remind_water LIMIT 1", null);
-        if (cursor != null && cursor.moveToFirst()) {
+        if (cursor != null && cursor.moveToFirst()) { // neu gia tri khong null thi di chuyen den ban ghi dau tien
             createdDate = cursor.getString(cursor.getColumnIndex("created_date"));
             cursor.close();
         }
         return createdDate;
     }
+    // cap nhat tan suat
     public void updateFrequency(float frequency) {
         ContentValues values = new ContentValues();
         values.put("frequency", frequency);
 
         db.update("remind_water", values, "user_id=?", new String[]{String.valueOf(this.user_id)});
     }
+    // lay du lieu tan suat tu sql
     @SuppressLint("Range")
     public float getFrequencyFromDatabase() {
         float frequency = 0.0f;
@@ -117,7 +119,6 @@ public class RemindWaterDAO {
                 cursor.close();
             }
         }
-
         return weight;
     }
     public long delete(String id) {

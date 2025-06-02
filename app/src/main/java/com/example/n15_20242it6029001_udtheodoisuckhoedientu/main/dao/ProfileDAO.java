@@ -19,7 +19,6 @@ import com.example.n15_20242it6029001_udtheodoisuckhoedientu.common.objects.User
 import com.example.n15_20242it6029001_udtheodoisuckhoedientu.main.model.Profile;
 public class ProfileDAO {
     private static final String TABLE_PROFILES = "profile";
-
     private static final String COLUMN_NAME = "full_name";
     private static final String COLUMN_DATE_OF_BIRTH = "date_of_birth";
     private static final String COLUMN_GENDER = "sex";
