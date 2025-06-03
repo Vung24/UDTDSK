@@ -28,10 +28,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cm_activity_login);
         getWidget();
-        edtPassword.setOnTouchListener(new View.OnTouchListener() {
+        edtPassword.setOnTouchListener(new View.OnTouchListener() { //theo doi su kien va cham tren editpass
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                if(motionEvent.getAction() == MotionEvent.ACTION_UP){ // khi tha tay
+                    // kiem tra nguoi dung co cham vao icon khong
                     if(motionEvent.getRawX() >= (edtPassword.getRight() - edtPassword.getCompoundDrawables()[2].getBounds().width())){
                         isPasswordVisible = !isPasswordVisible;
                         if (isPasswordVisible) {
@@ -41,8 +42,7 @@ public class LoginActivity extends AppCompatActivity {
                             edtPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
                             edtPassword.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.eye_close, 0); // Icon mắt đóng
                         }
-
-                        // Đưa con trỏ văn bản về cuối
+                        // dat con tro o cuoi de nguoi dung co the nhap tiep
                         edtPassword.setSelection(edtPassword.getText().length());
                         return true;
                     }
@@ -62,9 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                 login();
             }
         });
-
     }
-
     private void login(){
         String userName = edtUserName.getText().toString().trim();
         String password = edtPassword.getText().toString().trim();

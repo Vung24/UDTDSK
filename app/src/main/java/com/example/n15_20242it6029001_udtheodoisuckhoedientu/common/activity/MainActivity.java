@@ -57,9 +57,6 @@ public class MainActivity extends AppCompatActivity {
                 else if(id == R.id.menuItemLogout){
                     logOut();
                 }
-                else{
-
-                }
                 return false;
             }
         });
